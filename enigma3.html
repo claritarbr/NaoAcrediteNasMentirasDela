@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>É sempre um...</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Pista para pesquisa no Google Maps */
+        #pista {
+            font-size: 22px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #ccc;
+        }
+
+        /* Input do código */
+        #codigo-input {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: 2px solid #fff;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pista codificada para o local -->
+    <div id="pista">
+       
+        <strong>41° 6' 30.44" N, 8° X' 57.47" W</strong><br>
+    
+    </div>
+
+    <!-- Caixa de resposta -->
+    <input type="text" id="codigo-input" placeholder="Insira o Código">
+
+    <script>
+        const input = document.getElementById('codigo-input');
+
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                const valor = input.value.toLowerCase().trim();
+                // Resposta correta
+                if(valor === "casa mortuária") {
+                    window.location.href = "enigma4.html"; // Próxima página
+                } else {
+                    alert("Não é nada impossível, vá.");
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

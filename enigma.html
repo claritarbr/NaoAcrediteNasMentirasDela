@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😼</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        #resposta-escondida {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            opacity: 0.0275;
+            font-size: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        #codigo-input {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: 2px solid #fff;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        #dica-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: #000;
+            color: #fff;
+            padding: 15px 25px;
+            font-size: 18px;
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #000;
+            color: #fff;
+            padding: 30px;
+            border: 2px solid #fff;
+            text-align: center;
+            z-index: 100;
+            max-width: 80%;
+        }
+
+        #popup button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="resposta-escondida">A PRIMEIRA VEZ</div>
+
+    <input type="text" id="codigo-input" placeholder="Insira o Código">
+
+    <div id="dica-btn" onclick="abrirPopup()">???</div>
+
+    <div id="popup">
+        <p>Bem-vindo. Estava à tua espera. A resposta que procuras está diante dos teus olhos. Encontre-a.</p>
+        <button onclick="fecharPopup()">Não Entendi.</button>
+    </div>
+
+    <script>
+        function abrirPopup() {
+            document.getElementById('popup').style.display = "block";
+        }
+
+        function fecharPopup() {
+            document.getElementById('popup').style.display = "none";
+        }
+
+        const input = document.getElementById('codigo-input');
+
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                const valor = input.value;
+                if(valor === "04102024") {
+                    window.location.href = "enigma2.html"; // redireciona para página 2
+                } else {
+                    alert("A sério? Esta é fácil. Tente novamente.");
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

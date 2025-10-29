@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quick-response</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Imagem */
+        img {
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 20px;
+        
+        }
+
+        /* Input */
+        #codigo-input {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: 2px solid #fff;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Botão de dica */
+        #dica-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: #000;
+            color: #fff;
+            padding: 15px 25px;
+            font-size: 18px;
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
+
+        /* Pop-up */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #000;
+            color: #fff;
+            padding: 30px;
+            border: 2px solid #fff;
+            text-align: center;
+            z-index: 100;
+            max-width: 80%;
+        }
+
+        #popup button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Imagem do enigma -->
+    <img src="CODE.jpg" alt="Código misterioso">
+
+    <!-- Campo de resposta -->
+    <input type="text" id="codigo-input" placeholder="Insira o Código">
+
+    <!-- Botão de dica -->
+    <div id="dica-btn" onclick="abrirPopup()">???</div>
+
+    <!-- Pop-up -->
+    <div id="popup">
+        <p>Pensa.</p>
+        <button onclick="fecharPopup()">Vou tentar.</button>
+    </div>
+
+    <script>
+        // Funções para abrir e fechar o pop-up
+        function abrirPopup() {
+            document.getElementById('popup').style.display = "block";
+        }
+
+        function fecharPopup() {
+            document.getElementById('popup').style.display = "none";
+        }
+
+        // Verificar o código ao pressionar Enter
+        const input = document.getElementById('codigo-input');
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                const valor = input.value.toLowerCase().trim();
+                if (valor === "talvez") {
+                    window.location.href = "enigma5.html"; // próxima página
+                } else {
+                    alert("Abre bem os olhos.");
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
+

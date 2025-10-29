@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>veloso</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        #morse {
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        #codigo-input {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: 2px solid #fff;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="morse">.--- .- .-. -.. .. -- / -.. --- / -- --- .-. .-. --- </div> <!-- Exemplo Morse -->
+
+    <input type="text" id="codigo-input" placeholder="Insira o Código">
+
+    <script>
+        const input = document.getElementById('codigo-input');
+
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                const valor = input.value.toLowerCase().trim();
+                if(valor === "jardim do morro") {
+                    window.location.href = "enigma3.html"; // redireciona para página 3
+                } else {
+                    alert("Por amor de Deus.");
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
